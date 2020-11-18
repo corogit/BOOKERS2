@@ -1,4 +1,6 @@
-<%= render 'books/list', book:@book %>
+<%= render 'books/list1', user:@user %>
+<%= render 'books/list2', book:@book %>
+
 <% @users.each do |user| %>
 <div>
   <%= link_to user_path(user.id) do %>
