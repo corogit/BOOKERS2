@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+<div>
+  <%= link_to user_path(user.id) do %>
+  <% end %>
+
+  <p>image：</p>
+  <p>name：<%= user.name %></p>
+
+
+</div>
+<% end %>
