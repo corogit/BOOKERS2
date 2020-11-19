@@ -1,14 +1,21 @@
 <%= render 'books/list1', user:@user %>
 <%= render 'books/list2', book:@book %>
 
-<% @books.each do |book| %>
-<div>
-  <%= link_to book_path(book.id) do %>
-  <%= attachment_image_tag book, :image %>
+
+<h1>Books</h1>
+<table class="table table-hover">
+<thread>
+  <tr>
+    <th></th>
+    <th class='table-name'>Title</th>
+    <th class='table-name'>Opinion</th>
+  </tr>
+  </thread>
+  <% @books.each do |book| %>
+  <tr>
+    <td><%= attachment_image_tag book, :image %></td>
+    <td><%= link_to book.title %></td>
+    <td><%= book.body %></td>
+  </tr>
   <% end %>
-
-  <p>title：<%= book.title %></p>
-  <p>opinion：<%= book.body %></p>
-
-</div>
-<% end %>
+</table>
