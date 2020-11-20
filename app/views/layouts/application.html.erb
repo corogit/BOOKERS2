@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+   <script src="https://kit.fontawesome.com/31bd3b6efb.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -23,7 +23,12 @@
       <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-white' %>
+      <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+      </li>
+      <li class="nav-item">
+        
+      
+  <p><i class="fal fa-home"></i><%=link_to 'Home', user_path(current_user.id), class: 'nav-link text-white' %></p>
       </li>
       <li class="nav-item">
         <%= link_to 'Users', users_path(params[:id]), class: 'nav-link text-white' %>
@@ -39,7 +44,13 @@
 
       <% else %>
       <li class="nav-item">
+      <%= link_to "Bookers", root_path, class: 'nav-link text-white' %>
+      </li>
+      <li class="nav-item">
       <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "About", "/homes/", class: 'nav-link text-white' %>
       </li>
 
       <li class="nav-item">
