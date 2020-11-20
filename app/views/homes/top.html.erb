@@ -1,16 +1,23 @@
 <p id="notice"><%=  notice %></p>
 
-<h1>welcome to<i class="fas fa-book"></i> Bookers!!</h1>
+<div class="text-center">
+<h1>welcome to<i class="fas fa-book"></i> Bookers!!</h1></br>
 
-<p>in <i class="fas fa-book"></i>bookers</br>you can share and exchange your opinions , inpressions , and emotions
+<div class="text-center">
+<p>in <i class="fas fa-book"></i>bookers</br>
+<div class="text-center">
+you can share and exchange your opinions , inpressions , and emotions
+<div class="text-center">
+about various books!</p></br>
 
-about various books!</p>
+<% if user_signed_in? %>
 
-  <li>
-  <%= link_to "sign up", new_user_registration_path, class: "btn btn-default" %>
-  </li>
-  <li>
-  <%= link_to "login", new_user_session_path, class: "btn btn-default" %>
-  </li>
+  <p><%= link_to "Log in", user_path(current_user.id), class: "btn btn-info" %></p>
+  </br>
+  <p><%= link_to "Sign Up", user_path(current_user.id), class: "btn btn-success" %></p>
+<% else %>
 
-
+  <p><%= link_to "Log in", new_user_session_path, class: "btn btn-info" %></p>
+  </br>
+  <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %></p>
+<% end %>
