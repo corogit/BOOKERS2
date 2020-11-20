@@ -17,7 +17,7 @@ about various books!</p></br>
   <p><%= link_to "Sign Up", user_path(current_user.id), class: "btn btn-success" %></p>
 <% else %>
 
-  <p><%= link_to "Log in", new_user_session_path, class: "btn btn-info" %></p>
-  </br>
-  <p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success" %></p>
+  <a href="/users/sign_in"=>Log in</a>
+  <a href= "/users/sign_in">Sign up</a>
+   </br>
 <% end %>
