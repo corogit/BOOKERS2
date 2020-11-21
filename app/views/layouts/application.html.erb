@@ -26,21 +26,22 @@
        <li class="nav-item">
      <a href= "/", class="nav-link text-white">Bookers</a>
       </li>
+     
       <li class="nav-item">
 
-<i class="fal fa-home"></i><%=link_to 'Home', user_path(current_user.id), class: 'nav-link text-white' %>
+  <%=link_to 'Home', user_path(current_user.id), class: 'fas fa-home nav-link text-white'  %>
       </li>
       <li class="nav-item">
-      <a href= "/users/", class="nav-link text-white">Users</a>
+      <a href= "/users/", class="far fa-users nav-link text-white">Users</a>
        
+     
+
+      <li class="nav-item">
+        <%= link_to 'Books', books_path(params[:id]), class: 'fas fa-book-open nav-link text-white' %>
       </li>
 
       <li class="nav-item">
-        <%= link_to 'Books', books_path(params[:id]), class: 'nav-link text-white' %>
-      </li>
-
-      <li class="nav-item">
-        <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
       </li>
 
     <% else %>
@@ -48,20 +49,20 @@
       <p>Bookers</p>
       </li>
       <li class="nav-item">
-      <a href="/", class="nav-link text-white">Home</a>
+      <a href="/", class="fas fa-home nav-link text-white">Home</a>
       </li>
       <li class="nav-item">
-      <a href="/homes/about", class="nav-link text-white">About</a>  
+      <a href="/homes/about", class="fas fa-eject nav-link text-white">About</a>  
       </li>
 
       <li class="nav-item">
-          <a href= "/users/sign_up", class="nav-link text-white">sign up</a>
+          <a href= "/users/sign_up", class="fas fa-user-plus nav-link text-white">sign up</a>
   
       </li>
       <li class="nav-item">
-      <a href="/users/sign_in", class="nav-link text-white">login</a> 
+      <a href="/users/sign_in", class="fas fa-sign-out-alt nav-link text-white">login</a> 
      
-      </li>
+   
       <% end %>
       </ul>
     </div>
