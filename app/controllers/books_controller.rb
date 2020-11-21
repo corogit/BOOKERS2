@@ -8,7 +8,9 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id), notice: 'You have created book successfully.'
     else
-      render books_path
+      @user = current_user
+      @books = Book.all
+      render :index
     end
   end
 
@@ -38,7 +40,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
+    @book = Book.find(params[:id])
     if book.destroy
     redirect_to books_path
     end
