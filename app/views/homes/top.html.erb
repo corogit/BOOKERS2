@@ -1,23 +1,34 @@
 <p id="notice"><%=  notice %></p>
+<div class= 'container'>
+    <div class= 'row'>
+        <div class= 'mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
 
 
-<h1 class="text-center">welcome to<i class="fas fa-book"></i> Bookers!!</h1></br>
+<h1>welcome to<i class="fas fa-book"></i><strong> Bookers!!</strong></h1>
 
-<div class="text-center">
-<p class="text-center">in <i class="fas fa-book"></i>Bookers</br>
 
-you can share and exchange your opinions , inpressions , and emotions</br>
-about various books!</p></br>
+<p>In <i class="fas fa-book"></i><strong>Bookers,</strong></p>
 
-<% if user_signed_in? %>
+<p>you can share and exchange your opinions , inpressions , and emotions</p>
+<p>about various books!</p>
 
-  <p><%= link_to "Log in", user_path(current_user.id), class: "btn btn-info" %></p></br>
-  <p><%= link_to "Sign Up", user_path(current_user.id), class: "btn btn-success" %></p>
 
-<% else %>
 
-  <a href="/users/sign_in"=>Log in</a>
-  <a href= "/users/sign_in">Sign up</a>
-   </br>
-   </div>
-<% end %>
+
+
+
+
+<div class='btn-wrapper col-10 mx-auto'>
+    <div class= 'row'>
+    <p><%= link_to "Log in", new_user_session_path, class: 'btn btn-info btn-sm btn-block mb-3 sign_in' %></p>
+    <div class= 'row'>
+  <p><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success btn-sm btn-block sign_up' %></p>
+    </div>
+</div>
+
+
+         </div>
+    </div>
+</div>
+
+
