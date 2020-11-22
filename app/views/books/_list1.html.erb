@@ -1,8 +1,9 @@
 
 
 <h1>User info</h1>
-<%= attachment_image_tag user, :profile_image, size: "100 x 100", fallback: "no_image.jpg"%>
+<%= attachment_image_tag user, :profile_image, size: "20 x 20", fallback: "no_image.jpg" %>
 <p>name<%= user.name %></p>
 <p>introduction<%= user.introduction %></p>
+
 
 <%= link_to "edit", edit_user_path(user) , class: "fas fa-user-cog" %>
