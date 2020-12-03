@@ -16,6 +16,7 @@
      <th class='table-name'>image</th>
      <th class='table-name'>name</th>
      <th></th>
+     <th></th>
     </tr>
    </thread>
    <% @users.each do |user| %>
@@ -23,6 +24,7 @@
     <td><%= attachment_image_tag user, :profile_image, size: '100x100', fallback: "no_image.jpg" %></td>
     <td><%= user.name %></td>
     <td><%= link_to "Show", user_path(user.id) %></td>
+    <td><%= render "relationships/follow_button", user: user %></td>
    </tr>
    <% end %>
    </table>
