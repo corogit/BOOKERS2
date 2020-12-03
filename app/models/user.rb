@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :books, dependent: :destroy
@@ -16,11 +16,11 @@ class User < ApplicationRecord
   # フォロワーを取得
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # 自分のことをフォローしている人を取得　フォローされる側
-  
+
   attachment :profile_image
   validates :name, presence: true, length: { in:2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
-  
+
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(followed_id: other_user.id)
@@ -35,5 +35,6 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+
 
 end
