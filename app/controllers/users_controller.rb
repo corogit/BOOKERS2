@@ -27,6 +27,16 @@ before_action :ensure_correct_user, only:[:edit, :update]
     end
   end
 
+  def followings
+      @user  = User.find(params[:id])
+      @users = @user.followings
+  end
+
+  def followers
+    @user  = User.find(params[:id])
+    @users = @user.followers
+  end
+
   private
   def ensure_correct_user
     @user = User.find(params[:id])
@@ -36,6 +46,6 @@ before_action :ensure_correct_user, only:[:edit, :update]
   end
 
   def user_params
-    params.require(:user).permit(:name, :profile_image, :introduction)
+    params.require(:user).permit(:name, :profile_image, :introduction, :follower, :followers)
   end
 end
