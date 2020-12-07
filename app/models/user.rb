@@ -12,7 +12,7 @@ class User < ApplicationRecord
   # フォローを取得
   has_many :followings, through: :relationships, source: :followed
   # 自分がフォローしている人を取得 フォローする側
-  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id'
+  has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
   # フォロワーを取得
   has_many :followers, through: :reverse_of_relationships, source: :follower
   # 自分のことをフォローしている人を取得　フォローされる側
