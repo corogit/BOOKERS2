@@ -16,9 +16,9 @@ before_action :ensure_correct_user, only:[:edit, :update]
   end
 
   def index
-     @book = Book.new
-     @books = Book.all
-     @user = current_user
+    @book = Book.new
+    @books = Book.all
+    @user = current_user
   end
 
   def show
@@ -43,7 +43,7 @@ before_action :ensure_correct_user, only:[:edit, :update]
   def destroy
     @book = Book.find(params[:id])
     if @book.destroy
-    redirect_to books_path
+      redirect_to books_path
     end
   end
 
@@ -52,7 +52,7 @@ before_action :ensure_correct_user, only:[:edit, :update]
     def ensure_correct_user
     @book = Book.find(params[:id])
     unless @book.user == current_user
-     redirect_to books_path
+      redirect_to books_path
     end
     end
 
